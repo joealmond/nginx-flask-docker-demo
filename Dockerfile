@@ -1,12 +1,9 @@
-FROM nginx:1.25.3
+FROM python:3.9-alpine3.18
 
 COPY app.py .
 
-COPY nginx.conf /etc/nginx/nginx.conf
+RUN pip install Flask
 
-RUN apt update && apt install -y python3 python3-pip python3-flask
+EXPOSE 5000
 
-EXPOSE 80
-
-CMD service nginx start && python3 app.py 
-# service runs nginx in the background
+CMD python3 app.py

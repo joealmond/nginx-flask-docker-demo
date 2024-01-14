@@ -1,0 +1,10 @@
+version: '3.9'
+services:
+  flask-app:
+    build: .
+  web:
+    image: nginx:1.25
+    ports:
+      - "80:80"
+    volumes:
+      - "./nginx.conf:/etc/nginx/nginx.conf:ro"

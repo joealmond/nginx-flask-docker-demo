@@ -1,16 +1,13 @@
-Antipattern Docker containaer with Nginx and Flask
+Good solution - Nginx and Flask running on a separate conatainer
 Nginx act as a reverse proxy to expose localhost:5000 to localhost:80
-Flask serves a simple "Hello World!" page.
+Flask serves a simple "Hello World!" to external host (0.0.0.0:5000)
 
-prerequisits: Docker
+prerequisits: Docker, Docker-compose
 
-build the image with docker
-`docker build -t nginx-flask .`
+build the images with docker
+`docker-compose up`
 
-run it dith docker,
-`docker run -d -p 8080:80 nginx-flask`
-
-show it in the browser on http://localhost:8080 or
-`curl localhost:8080`
+show it in the browser on http://localhost:80 or
+`curl localhost:80`
 
 The output should be: `<h1>Hello, World!</h1>` or "Hello World!"
