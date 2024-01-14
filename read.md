@@ -7,7 +7,7 @@ prerequisits: Docker
 build the image with docker
 `docker build -t nginx-flask .`
 
-run it dith docker,
+run it with docker,
 `docker run -d -p 8080:80 nginx-flask`
 
 show it in the browser on http://localhost:8080 or
